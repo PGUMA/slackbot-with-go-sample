@@ -1,7 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Print("Hello Go Dev Template")
+	loadEnv()
+
+	fmt.Println(os.Getenv("SLACK_SIGNING_SECRET"))
+}
+
+// .envを呼び出します。
+func loadEnv() {
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		fmt.Printf("can not load env file: %v", err)
+	}
 }

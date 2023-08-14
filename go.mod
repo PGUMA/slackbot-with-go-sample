@@ -1,3 +1,3 @@
-module github.com/PGUMA/go-dev-template
+module github.com/PGUMA/slackbot-with-go-sample
 
 go 1.20
